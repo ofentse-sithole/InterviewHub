@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:context=".ViewObservation">
+
+        <!-- TextView to display observation data -->
+        <TextView
+            android:id="@+id/observationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observation Data:"
+            android:textAlignment="center"
+            android:textColor="#050505"
+            android:textColorHint="#1C1C1C"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Bottom navigation bar -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/observationRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/observationTextView"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/observation_item" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+        android:layout_below="@id/observationRecyclerView"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/nav_menu" />
+    </RelativeLayout>
+</ScrollView>
